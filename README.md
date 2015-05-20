@@ -47,12 +47,16 @@ VERSIONS:
 
 ===
 Changelog 1.7.7 -> 1.8.x. Un ~ signale une commande incomplète et un ~~ une commande encore difficile à utiliser.
+
 ==
+
 LEGENDE
 (+) = fonction ajoutée
 (-) = chose retirée
 (*) = autre
+
 ==
+
 (+) Les plugins peuvent être désormais en hta!
 (+) Envoi semi auto des rapports d'erreurs!
 (+) Gestion améliorée des rapports d'erreurs
