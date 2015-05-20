@@ -1,0 +1,28 @@
+@echo off
+
+::Compatible avec hCmd version 1.7.7 uniquement
+set d=%~dp0
+DEL session.lock
+for /f "tokens=1,2 delims==" %%V in ('type hCmd.bat ^| find "set hversion="') do (
+if not %%W==1.7.7 goto ev
+)
+for /f "tokens=1,2,3,4 delims=;=" %%A in ('type %d%\PluginsData\Aide\aide.hcmd.fr.txt ^| find /i "p="') do (
+mode con cols=%%B lines=%%C
+color %%D
+)
+title aide.hcmd.fr
+cls
+echo.
+echo.
+for /f "tokens=* delims=£ skip=1 eol=#" %%A in (%d%\PluginsData\Aide\aide.hcmd.fr.txt) do echo %%A
+echo.
+echo.
+pause
+exit
+:ev
+cls
+echo.
+echo   Vous ne pouvez pas utiliser ceci dans votre version de hCmd.
+echo             T‚l‚chargez la version officielle 1.7.7.
+pause
+exit

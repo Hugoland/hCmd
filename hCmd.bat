@@ -5,16 +5,16 @@ title Interpreteur de Commandes par Hugo v1.7.0
 
 if not exist params\parametres.inf call :makeinf
 call :param 
-:: Ceci sert Ã  traiter les paramÃ¨tres - et ia aussi
+:: Ceci sert à traiter les paramètres - et ia aussi
 
 
-:: EmpÃªcher l'utilisateur de fermer la fenÃªtre afin d'Ã©viter d'avoir des rapports d'erreurs sans erreur :)
+:: Empêcher l'utilisateur de fermer la fenêtre afin d'éviter d'avoir des rapports d'erreurs sans erreur :)
 if %GMODE%==false Syst\PClosure.exe &rem   By Skywalker ;)
 
 ::Gestion des rapports d'erreurs, warn en cas d'existance de rapports, rmdir du dossier si vide
 if exist Rapports_d'erreurs/nps.log call :existcrash
 
-::RÃ©cupÃ©ration des plugins
+::Récupération des plugins
 for /f %%P in ('dir /b *.com *.bat *.vbs *.plugin') do (
 echo %%P>>plugins.tmp
 )
@@ -29,10 +29,10 @@ if not exist params md Params
 del/q C:\temp\hCmd\ndir.*
 del/q C:\temp\hCmd\*.vbs
 del/q temphc.bat
-echo msgbox "Le nom ou le chemin d'accÃ¨s est introuvable.", + vbCritical , "hCmd" >> C:\temp\hCmd\ec.vbs
-echo msgbox "Ce plugin n'existe pas dans le dossier oÃ¹ se situe le .bat .", + vbCritical , "hCmd" >> C:\temp\hCmd\erpl.vbs
+echo msgbox "Le nom ou le chemin d'accès est introuvable.", + vbCritical , "hCmd" >> C:\temp\hCmd\ec.vbs
+echo msgbox "Ce plugin n'existe pas dans le dossier où se situe le .bat .", + vbCritical , "hCmd" >> C:\temp\hCmd\erpl.vbs
 echo msgbox "Veuillez installer Batbox. Commande: 'bb'" , +vbCritical , "hCmd" >> C:\temp\hCmd\ebbx.vbs
-echo msgbox "Une erreur est survenue. Merci de transmettre le rapport qui suit Ã  Hugo.", +vbCritical, "hCmd">> C:\temp\hCmd\ersl.vbs
+echo msgbox "Une erreur est survenue. Merci de transmettre le rapport qui suit à Hugo.", +vbCritical, "hCmd">> C:\temp\hCmd\ersl.vbs
 if exist C:\temp\hCmd\ndir.txt ren C:\temp\hCmd\ndir.txt ndir.vbs
 if exist temphc.bat ( 
 if %IA%==1 IA\rl.vbs & del/q temphc.bat
@@ -63,17 +63,17 @@ cls
 :ok2
 cls
 color 07
-::   (truc supprimÃ©)
+::   (truc supprimé)
 cls
 :pa
 cls
-::   (truc supprimÃ©)
+::   (truc supprimé)
 cls
-::   (truc supprimÃ©)
+::   (truc supprimé)
 cls
 color %COLOR%
 :ok0
-::   (truc supprimÃ©)
+::   (truc supprimé)
 :ok
 ::   (Devinez...)
 :okcmd
@@ -191,7 +191,7 @@ exit
 
 
 :col
-echo Aide sur les couleurs Ã  utiliser: taper   ?
+echo Aide sur les couleurs à utiliser: taper   ?
 set /p cou=
 if /I -%cou%==-? color/?
 color %cou%
@@ -249,7 +249,7 @@ goto newname
 ren "%r15%" "%r2%"
 cd/d %D%
 goto ok
-:: (truc supprimÃ©)
+:: (truc supprimé)
 ::retour en %~dp0
 ::
 cd /d %D%
@@ -342,7 +342,7 @@ if /i %GMODE%==false echo erlv[%ERRORLEVEL%]dir[%D%]chx[%c%]d[%date%]version[%CM
 cls
 echo Bienvenue dans l'outil de gestion des dossiers!
 echo Placez vous dans le dossier a g,rer et copiez
-echo collez le chemin d'accÃ¨s ici
+echo collez le chemin d'accès ici
 set/p wdir=
 for %%z in (%wdir%) do set wdir2=%%~z
 if not exist "%wdir2%" (
@@ -353,7 +353,7 @@ cd /d "%wdir%"
 
 :diract
 cls
-set/p action=Simplement executer 1 2 ou 3. '1'=crÃ©er '2'=supprimer '3'=lister les fichiers '4'=copier ou deplacer un dossier '5'=quitter   
+set/p action=Simplement executer 1 2 ou 3. '1'=créer '2'=supprimer '3'=lister les fichiers '4'=copier ou deplacer un dossier '5'=quitter   
 if %action%==1 goto dir1
 if %action%==2 goto dir2
 if %action%==3 goto dir3
@@ -364,7 +364,7 @@ goto diract
 set l=Gestion-dossiers-creer
 if /i %GMODE%==false echo erlv[%ERRORLEVEL%]dir[%D%]chx[%c%]d[%date%]version[%CMDEXTVERSION%]hversion[%hversion%]pl[%n%]cmddir[%CMDCMDLINE%]avt.de[%l% >session.lock
 
-set/p nm=Arborescence Ã  creer (pensez aux \ et pas aux /)  
+set/p nm=Arborescence à creer (pensez aux \ et pas aux /)  
 md %nm%
 if errorlevel 0 (
 echo OK!
@@ -379,7 +379,7 @@ exit
 set l=Gestion-dossiers-detruire
 if /i %GMODE%==false echo erlv[%ERRORLEVEL%]dir[%D%]chx[%c%]d[%date%]version[%CMDEXTVERSION%]hversion[%hversion%]pl[%n%]cmddir[%CMDCMDLINE%]avt.de[%l% >session.lock
 
-set/p dmode=Si vous detruisez un dossier, est ce que l'invite de commande doit conserver les fichiers et les sous dossiers contenus dans le dossier Ã  dÃ©truire? (1/0)  
+set/p dmode=Si vous detruisez un dossier, est ce que l'invite de commande doit conserver les fichiers et les sous dossiers contenus dans le dossier à détruire? (1/0)  
 if %dmode%==1 (
 set mode="Les fichiers et sous dossiers seront conserves."
 ) else set mode="Les fichiers et sous dossiers seront detruits."
@@ -468,7 +468,7 @@ if /i %GMODE%==false echo erlv[%ERRORLEVEL%]dir[%D%]chx[%c%]d[%date%]version[%CM
 
 @echo off
 ::Par Hugo7 batch.xoo.it
-::spÃ©cifie si il faut mettre %CD% ou pas
+::spécifie si il faut mettre %CD% ou pas
 set off=0
 cls
 echo {{{{ FR-DOS - Le MS-DOS en francais! }}}}
@@ -479,13 +479,13 @@ echo Entrez une commande en francais! (tapez 'liste' pour la liste)
 :frc
 set frc=NULL
 set erreur=1
-::%erreur% -> si 0, le message d'erreur ne s'affichera pas, set erreur=0 dÃ¨s que la cmd est reconnue et traitÃ©e
+::%erreur% -> si 0, le message d'erreur ne s'affichera pas, set erreur=0 dès que la cmd est reconnue et traitée
 if %off%==0 set/p frc=%cd%^>
 if %off%==1 set/p frc=
 
 if "%frc%"==NULL goto frc
 
-:: DÃ©composition de la commande, "delims=-"
+:: Décomposition de la commande, "delims=-"
  for /f "tokens=1 delims=-" %%f in ('echo %frc%') do set fcmd=%%f 
 
  ::if 
@@ -504,7 +504,7 @@ if "%frc%"==NULL goto frc
 
   if /i %fcmd%==met/d (
   set erreur=0
-  ::Ã©quivalent de set/p (prompt = demander, d'oÃ¹ /d).
+  ::équivalent de set/p (prompt = demander, d'où /d).
   for /f "tokens=1,2 delims=-" %%C in ("%frc%") do (
    for /f "tokens=1,2 delims=@" %%E in ("%%D") do (
     set/p %%E=%%F
@@ -514,7 +514,7 @@ if "%frc%"==NULL goto frc
 
   if /i %fcmd%==met/n (
   set erreur=0
-  ::Ã©quivalent de set/a (N comme "nombre", d'oÃ¹ /n).
+  ::équivalent de set/a (N comme "nombre", d'où /n).
   for /f "tokens=1,2 delims=-" %%C in ("%frc%") do (
    for /f "tokens=1,2 delims=@" %%E in ("%%D") do (
     set/a %%E=%%F
@@ -527,7 +527,7 @@ if "%frc%"==NULL goto frc
   
   REM if /i %fcmd%==si (
   REM set erreur=0
-  REM ::Ã©quivalent de if.
+  REM ::équivalent de if.
   REM for /f "tokens=1,2 delims= " %%C in ("%frc%") do (
    REM for /f "tokens=1,2 delims=@" %%E in ("%%D") do (
     REM echo taper # pour ignorer.
@@ -569,7 +569,7 @@ if "%frc%"==NULL goto frc
 	  REM )
 	 REM )
 
-REM ::parenthÃ¨se fin des for %%C %%E et %%G dessous, puis du if =si
+REM ::parenthèse fin des for %%C %%E et %%G dessous, puis du if =si
 	REM )
   REM ) 
   REM )
@@ -663,7 +663,7 @@ del /q session.lock
 cls
 echo.
 echo.
-echo    Les fichiers temporaires vont Ãªtre supprimâ€šs.
+echo    Les fichiers temporaires vont être supprim‚s.
 echo Appuyez sur une touche pour continuer, fermez pour annuler, il n'y aura pas de crash.log.
 if exist C:\temp\hCmd (
 del /f/s/q C:\temp\hCmd\*
@@ -698,14 +698,14 @@ echo ... puis enregistrez le...
 echo ... et enfin fermez le.
 notepad %f.cx%
 ping pc /n 2 >Nul
-echo Voilâ€¦!
+echo Voil…!
 pause
 goto ok
 
 :reset-hCmd
 cls
 echo.
-echo Filtrer le râ€špertoire de hCmd? Les plugins et configs seront gardâ€šs.
+echo Filtrer le r‚pertoire de hCmd? Les plugins et configs seront gard‚s.
 set/p rst=O/N   : 
 if /i not .%rst%==.O if /i not .%rst%==.N goto %c%-hCmd
 if /i .%rst%==.N goto ok
@@ -718,7 +718,7 @@ goto ok
 
 :st
 :: STOP
-:: L'utilisateur peut maintenant fermer l'interprÃ©teur
+:: L'utilisateur peut maintenant fermer l'interpréteur
 if %GMODE%==false Syst\PClosure.exe
 set l=EXIT
 if /i %GMODE%==false echo erlv[%ERRORLEVEL%]dir[%D%]chx[%c%]d[%date%]version[%CMDEXTVERSION%]hversion[%hversion%]pl[%n%]cmddir[%CMDCMDLINE%]avt.de[%l% >session.lock
@@ -729,8 +729,8 @@ if %IA%==1 start IA\a+.vbs
 exit
 
 :sl
-:: Si prÃ©sence de session.lock = gen rapport d'erreurs
-:: L'utilisateur peut maintenant fermer l'interprÃ©teur
+:: Si présence de session.lock = gen rapport d'erreurs
+:: L'utilisateur peut maintenant fermer l'interpréteur
 if %GMODE%==false Syst\PClosure.exe
 if not exist session.lock goto ok
 for /f "tokens=1,2,3 delims=/" %%d in ("%date%") do (
@@ -750,11 +750,11 @@ echo.
 echo.
 echo erlvl=%ERRORLEVEL%
 echo.
-echo hCmd s'est fermâ€š sur une erreur merci de valider le formulaire qui s'ouvre.
+echo hCmd s'est ferm‚ sur une erreur merci de valider le formulaire qui s'ouvre.
 echo.
 echo.
 echo.
-echo            Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²  /!\  Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²Â²
+echo            ²²²²²²²²²²²²²²  /!\  ²²²²²²²²²²²²²²
 echo.
 echo Une erreur est survenue. 
 echo.
@@ -782,8 +782,8 @@ if not exist temphc.bat pause
 goto :eof
 
 :makeinf
-:: CrÃ©ation de parametres.inf via le traitement du .ini
-:: Cette partie sert aussi Ã  remettre Ã  0 les paramÃ¨tres
+:: Création de parametres.inf via le traitement du .ini
+:: Cette partie sert aussi à remettre à 0 les paramètres
 del /q params\parametres.inf
 timeout/t 1 >Nul
 
@@ -792,9 +792,9 @@ REM for /f "tokens=*" %%A in ('type params') do (
     REM if errorlevel 1 echo %%A>>###
     REM )
 
-echo # Fichier de configuration. Tapez /config pour paramÃ©trer. Ne pas modifier manuellement. >>params\parametres.inf
+echo # Fichier de configuration. Tapez /config pour paramétrer. Ne pas modifier manuellement. >>params\parametres.inf
 echo # >>params\parametres.inf
-echo #   Ce fichier est lÃ  pour enregistrer les paramÃ¨tres. >>params\parametres.inf
+echo #   Ce fichier est là pour enregistrer les paramètres. >>params\parametres.inf
 echo # >>params\parametres.inf
 echo # Par Hugo7 -^> Batch.xoo.it ^<- >>params\parametres.inf
 for /f "eol=#" %%M in ('type params\parametres.ini') do (
@@ -818,7 +818,7 @@ for /f "eol=#" %%P in ('type Params\parametres.inf') do (
 set %%P
 )
 
-:: Si l'utilisateur a laissÃ© le rÃ©pertoire de travail Ã©quivalent Ã  %~dp0, alors on dÃ©finit une 2e fois %D%, car dans for, %~dp0 ne se dÃ©finit pas...
+:: Si l'utilisateur a laissé le répertoire de travail équivalent à %~dp0, alors on définit une 2e fois %D%, car dans for, %~dp0 ne se définit pas...
 if "%D:~-1%"=="0" set D=%~dp0
 
 if "%IA%"=="true" (
@@ -846,10 +846,10 @@ echo    Liste des valeurs = parametres possibles - explication
 echo      LANGUAGE=FR - Seul le francais est dispo.*
 echo      IA=true/false - Si vous voulez qu'hCmd vous parle (son^).
 echo      ACTIVEPLUGINS=true/false - Si vous voulez ou pas activer les plugins.
-echo      SAUVGCOLOR=true/false - Si la couleur entrâ€še dans la commande /cc doit etre sauvâ€še.*
+echo      SAUVGCOLOR=true/false - Si la couleur entr‚e dans la commande /cc doit etre sauv‚e.*
 echo      D=%~dp0/chemin - DIR d'hCmd, ne modifiez pas si vous n'etes pas sur(e^). 
 echo      COLOR=couleur - Voir 'color /?' dans cmd.exe
-echo   * = Non implâ€šmentâ€š
+echo   * = Non impl‚ment‚
 pause
 ) 
 if not "%2"=="" (

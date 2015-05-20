@@ -1,0 +1,2 @@
+Ceci est le dossier où les plugins pourront mettre leurs fichiers temporaires et leus fichiers de paramètres.
+(vous pouvez supprimer le dossier exemple)
