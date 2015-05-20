@@ -1,1 +1,0 @@
-msgbox "Les modifications dans les paramètres ne seront effecives qu'après avoir tapé la commande 'reload'.", +vbOkOnly +vbInformation, "hCmd"
