@@ -1,0 +1,18 @@
+p=61;23;f1
+           ================================
+           =Bienvenue dans l'Aide de hCmd.=
+           ================================
+  _________________________________________________________
+ |hCmd est un logiciel d‚velopp‚ par Hugo7 (batch.xoo.it). |
+ |Il regroupe plusieurs mini utilitaires pour vous donner  |
+ |une meilleure exp‚rience de l'utilisation informatique.  |
+ |                                                         |
+ |Vous pouvez par exemple disposer d'une calculette,       |
+ |‚teindre votre ordi, disposer d'un menu graphique pour   |
+ |avoir de l'aide concernant des cat‚gories r‚currentes de |
+ |l'utilisation de l'ordi (‚crire un texte, Facebook, en   |
+ |cas de problèmes li‚s directement … l'ordi, par exemple).|
+ |                                                         |
+ |   Tapez /? pour une liste de commandes, ou /help+ qui   |
+ |         fonctionne avec ce plugin uniquement.           |
+ |_________________________________________________________|
