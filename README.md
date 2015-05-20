@@ -48,16 +48,16 @@ VERSIONS:
 ===
 Changelog 1.7.7 -> 1.8.x. Un ~ signale une commande incomplète et un ~~ une commande encore difficile à utiliser.
 ==
-LEGENDE
-+ = fonction ajoutée
-- = chose retirée
-* = autre
++LEGENDE
++ + = fonction ajoutée
++ - = chose retirée
++ * = autre
 ==
-+ Les plugins peuvent être désormais en hta!
-+ Envoi semi auto des rapports d'erreurs!
-* Gestion améliorée des rapports d'erreurs
-* La voix a été améliorée: dans certains cas, le logiciel n'attend plus que la vaix ait fini sa phrase avent de passer à la suite
-- quelques bugs (et fails ^^')
++ + Les plugins peuvent être désormais en hta!
++ + Envoi semi auto des rapports d'erreurs!
++ * Gestion améliorée des rapports d'erreurs
++ * La voix a été améliorée: dans certains cas, le logiciel n'attend plus que la vaix ait fini sa phrase avent de passer à la suite
++ - quelques bugs (et fails ^^')
 ------------------------------------------------------
 
 Merci à Spyromain, Anton75012 et IK-DC pour les tests!
